@@ -19467,7 +19467,7 @@ input[type=number]::-webkit-inner-spin-button {
 @media (min-width: 1200px) {
   .nav-menuzord .menuzord .menuzord-brand {
     padding: 20px 0;
-    width: auto;
+    width: 200px;
   }
 }
 .nav-menuzord .menuzord .menuzord-brand img {
