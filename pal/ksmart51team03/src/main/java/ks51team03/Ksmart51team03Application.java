@@ -1,4 +1,4 @@
-package team03;
+package ks51team03;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

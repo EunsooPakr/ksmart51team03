@@ -1,4 +1,4 @@
-package team03.user.common.controller;
+package ks51team03.member.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
