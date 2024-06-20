@@ -1,5 +1,5 @@
 package ks51team03.funeral.payment.service;
 
-public class ReserveService {
+public class PaymentService {
 
 }
