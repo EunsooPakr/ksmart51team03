@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout/default}">
+      layout:decorate="~{layout/map_default}">
 <head>
     <style>
         #map {
@@ -18,12 +18,20 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+        #info_wrap {
+            display: none;
+        }
 
         .map_wrap, #info_wrap, .map_wrap * { margin: 0; padding: 0; font-family: 'Malgun Gothic', dotum, '돋움', sans-serif; font-size: 12px; }
         .map_wrap a, .map_wrap a:hover, #info_wrap, .map_wrap a:active { color: #000; text-decoration: none; }
         .map_wrap { position: relative; width: 100%; height: 800px; }
         #menu_wrap { position: absolute; top: 0; left: 0; bottom: 0; width: 250px; margin: 10px 0 30px 10px; padding: 5px; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 1; font-size: 12px; border-radius: 10px; }
-        #info_wrap { position: absolute; top: 0; right: 0; bottom: 0; width: 250px; margin: 10px 0 30px 10px; padding: 5px; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 1; font-size: 12px; border-radius: 10px;}
+        #info_wrap { position: absolute; top: 0; left: 0; bottom: 0; width: 250px; margin: 10px 0 30px 10px; padding: 5px; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 1; font-size: 12px; border-radius: 10px;}
         .bg_white { background: #fff; }
         #menu_wrap hr { display: block; height: 1px; border: 0; border-top: 2px solid #5F5F5F; margin: 3px 0; }
         #menu_wrap .option { text-align: center; }
@@ -56,6 +64,91 @@
         #pagination { margin: 10px auto; text-align: center; }
         #pagination a { display: inline-block; margin-right: 10px; }
         #pagination .on { font-weight: bold; cursor: default; color: #777; }
+        .back_button {
+            text-align: left;
+        }
+
+        .back_button button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .back_button button:hover {
+            background-color: #0056b3;
+        }
+
+        .company_image {
+            width: 100%;
+            height: 150px;
+            background-color: orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .details {
+            text-align: center;
+        }
+        #placeRating, #parking {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+        #placeName {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        #placeAddress, #placePhone, #employee_count {
+            margin: 5px 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .reviews {
+            margin-top: 20px;
+        }
+        #placeReviews {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .review_list {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+        }
+        .review {
+            margin-bottom: 5px;
+        }
+        .review-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 0;
+        }
+        #placeReviews {
+            font-size: 16px;
+        }
+
+        .write-review-link {
+            color: #007BFF !important;
+            text-decoration: none;
+            margin-left: auto; /* Optional: This will push the link to the far right */
+        }
+
+        .write-review-link:hover {
+            text-decoration: underline;
+        }
+        #write-qeustion-link {
+            text-align: right;
+            display: block;
+            margin-left: auto; /* 부모 컨테이너 내에서 오른쪽으로 이동 */
+        }
     </style>
 </head>
 <th:block layout:fragment="customContent">
@@ -78,13 +171,38 @@
                         <div id="pagination"></div>
                     </div>
                     <div id="info_wrap" class="bg_white">
-                        <h2>업체 정보</h2>
-                        <div id="placeName">고양이강아지다와라</div>
-                        <div id="placeAddress">전주시 어딘가</div>
-                        <div id="placeHours">24시간 영업</div>
-                        <div id="placeRating">별4개</div>
-                        <div id="placeReviews">후기:24개</div>
-                        <img id="placeIcon" src="" alt="업체 아이콘">
+                        <div class="back_button">
+                            <button type="button" id="returnMenu_wrap">메뉴출력</button>
+                        </div>
+                        <div>
+                            <div class="company_image">
+                                <img id="placeIcon" src="" alt="업체 이미지">
+                            </div>
+                            <div class="details">
+                                <div id="placeRating">별점: 4</div>
+                                <div id="parking">주차장: X</div>
+                                <div>
+                                    <a th:href="@{map_company_info}" id="placeName"></a>
+                                </div>
+                                <div id="placeAddress"></div>
+                                <div id="placePhone"></div>
+                                <div id="employee_count">직원 수: 2</div>
+                                <div id="placeHours"></div>
+                            </div>
+                            <a th:href="@{map_write_question}" class="write-review-link" id="write-qeustion-link">문의하기</a>
+                            <hr>
+                            <div class="reviews">
+                                <div class="review-container">
+                                    <div id="placeReviews">리뷰: 40개</div>
+                                    <a th:href="@{map_write_review}" class="write-review-link">리뷰 작성하기</a>
+                                </div>
+                                <div class="review_list">
+                                    <div class="review">리뷰 1: 좋아요</div>
+                                    <div class="review">리뷰 2: 싫어요</div>
+                                    <!-- 더 많은 리뷰를 추가할 수 있습니다 -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,8 +265,10 @@
 
         // 검색 결과 목록과 마커를 표출하는 함수입니다
         function displayPlaces(places) {
+            console.log(places);
             var listEl = document.getElementById('placesList'),
                 menuEl = document.getElementById('menu_wrap'),
+                infoCompany = document.getElementById('info_wrap'),
                 fragment = document.createDocumentFragment(),
                 bounds = new kakao.maps.LatLngBounds(),
                 listStr = '';
@@ -176,9 +296,11 @@
                 // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기 위해 LatLngBounds 객체에 좌표를 추가합니다
                 bounds.extend(placePosition);
 
+                itemEl.setAttribute('data-index', i);
+
                 // 마커와 검색결과 항목에 mouseover 했을 때 해당 장소에 인포윈도우에 장소명을 표시합니다
                 // mouseout 했을 때는 인포윈도우를 닫습니다
-                (function(marker, title) {
+                (function(marker, title, idx) {
                     kakao.maps.event.addListener(marker, 'mouseover', function() {
                         displayInfowindow(marker, title);
                     });
@@ -187,22 +309,23 @@
                         infowindow.close();
                     });
 
-                    itemEl.onmouseover = function() {
-                        displayInfowindow(marker, title);
-                        // 마우스를 올렸을 때 지도의 중심을 해당 마커로 이동
-                        map.setCenter(marker.getPosition());
-
-                    };
-
                     itemEl.onmouseout = function() {
                         infowindow.close();
                     };
 
                     itemEl.onclick = function() {
-                        displayPlaceInfo(place);
+                        console.log("클릭된 항목의 인덱스:", idx);
+                        console.log(places[idx])
+                        displayPlaceInfo(places[idx]);
+                        menuEl.style.display = 'none';
+                        infoCompany.style.display = 'block';
+
+                        displayInfowindow(marker, title);
+                        map.setCenter(marker.getPosition());
                     };
 
-                })(marker, places[i].place_name);
+
+                })(marker, places[i], i);
 
                 fragment.appendChild(itemEl);
             }
@@ -223,6 +346,16 @@
             // 첫 번째 마커의 위치를 지도의 중심으로 설정합니다
             if (firstPlacePosition) {
                 map.setCenter(firstPlacePosition);
+            }
+            // 장소 정보를 표시하는 함수입니다
+            function displayPlaceInfo(places) {
+                document.getElementById('placeName').textContent = places.place_name;
+                document.getElementById('placeAddress').textContent = "주소: " + places.address_name;
+                document.getElementById('placeHours').textContent = "업체 운영시간: " + (places.opening_hours || "정보 없음");
+                document.getElementById('placePhone').textContent = "번호: " + (places.phone || "정보 없음");
+                document.getElementById('placeRating').textContent = "별점: " + (places.rating || "정보 없음");
+                document.getElementById('placeReviews').textContent = "리뷰(수): " + (places.reviews || "정보 없음");
+                document.getElementById('placeIcon').src = places.icon || "default_icon.png";
             }
         }
 
@@ -318,15 +451,7 @@
             infowindow.open(map, marker);
         }
 
-        // 장소 정보를 표시하는 함수입니다
-        function displayPlaceInfo(place) {
-            document.getElementById('placeName').textContent = "업체 이름: " + place.place_name;
-            document.getElementById('placeAddress').textContent = "업체 주소: " + place.address_name;
-            document.getElementById('placeHours').textContent = "업체 운영시간: " + (place.opening_hours || "정보 없음");
-            document.getElementById('placeRating').textContent = "별점: " + (place.rating || "정보 없음");
-            document.getElementById('placeReviews').textContent = "리뷰(수): " + (place.review_count || "정보 없음");
-            document.getElementById('placeIcon').src = place.icon || "default_icon.png";
-        }
+
 
         // 검색결과 목록의 자식 Element를 제거하는 함수입니다
         function removeAllChildNods(el) {
@@ -334,6 +459,10 @@
                 el.removeChild(el.lastChild);
             }
         }
+        document.getElementById('returnMenu_wrap').onclick = function() {
+            document.getElementById('info_wrap').style.display = 'none';
+            document.getElementById('menu_wrap').style.display = 'block';
+        };
     </script>
 </th:block>
 </html>

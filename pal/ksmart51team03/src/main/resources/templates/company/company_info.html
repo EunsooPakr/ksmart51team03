@@ -11,8 +11,10 @@
             padding: 0;
         }
 
-        .container {
+        .company_container {
+        	position: relative;
             max-width: 800px;
+            top: 200px;
             margin: 0 auto;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -32,6 +34,18 @@
         .edit-button {
             position: absolute;
             top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .delete-button {
+            position: absolute;
+            top: 10px;
             right: 10px;
             padding: 10px 20px;
             background-color: #007BFF;
@@ -43,7 +57,7 @@
             font-size: 14px;
         }
 
-        .edit-button:hover {
+        .edit-button:hover ,.delete-button:hover{
             background-color: #0056b3;
         }
 
@@ -129,9 +143,11 @@
 </head>
 
 <th:block layout:fragment="customContent">
-    <div class="container">
+    <div class="company_container">
         <div class="image-section" th:style="|background-image: url('${imageUrl}');|"></div>
         <div class="content-section">
+            <a th:href="@{company_modify}" class="edit-button">수정하기</a>
+            <a th:href="@{company_delete}" class="delete-button">삭제하기</a>
             <h1 th:text="${businessName}">늘채움</h1>
             <p>
                 <span th:text="${category}">한식</span> ·
