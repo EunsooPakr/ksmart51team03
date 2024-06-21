@@ -65,6 +65,42 @@
 		})
   });
   
+  
+     /*==================================================================
+    [ Fixed Header ]*/
+    var headerDesktop = $('.container-menu-desktop');
+    var wrapMenu = $('.wrap-menu-desktop');
+
+    if($('.top-bar').length > 0) {
+        var posWrapHeader = $('.top-bar').height();
+    }
+    else {
+        var posWrapHeader = 0;
+    }
+    
+
+    if($(window).scrollTop() > posWrapHeader) {
+        $(headerDesktop).addClass('fix-menu-desktop');
+        $(wrapMenu).css('top',40); 
+    }  
+    else {
+        $(headerDesktop).removeClass('fix-menu-desktop');
+        $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
+    }
+
+    $(window).on('scroll',function(){
+        if($(this).scrollTop() > posWrapHeader) {
+            $(headerDesktop).addClass('fix-menu-desktop');
+            $(wrapMenu).css('top',40); 
+        }  
+        else {
+            $(headerDesktop).removeClass('fix-menu-desktop');
+            $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
+        } 
+    });
+  
+  
+  
   /*======== 2. NAVBAR ========*/
   $(window).on('load', function () {
 
