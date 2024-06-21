@@ -361,12 +361,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   align-items: center;
 }
 
-.fix-menu-desktop .main-menu > li {
-  display: block;
-  position: relative;
-  padding: 20px 30px 20px 30px;
-  margin: 0px 20px 0px 30px;
-}
+
 
 
 .main-menu > li {
@@ -376,15 +371,45 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   margin: 0px 0px 0px 0px;
 }
 
-.main-menu > li > a {
-  font-family: Poppins-Medium;
-  font-size: 14px;
-  color: #333;
-  padding: 5px 20px;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+
+@media (min-width: 710px){
+
+	.fix-menu-desktop .main-menu > li {
+	  display: block;
+	  position: relative;
+	  padding: 20px 50px 20px 50px;
+	  margin: 0px 0px 0px 0px;
+	}
+
+	.main-menu > li > a {
+	  font-family: Poppins-Medium;
+	  font-size: 14px;
+	  color: #333;
+	  padding: 5px 0px;
+	  transition: all 0.4s;
+	  -webkit-transition: all 0.4s;
+	  -o-transition: all 0.4s;
+	  -moz-transition: all 0.4s;
+	}
+}
+
+@media (max-width: 700px){
+	.fix-menu-desktop .main-menu > li {
+	  display: block;
+	  position: relative;
+	  padding: 20px 50px 20px 30px;
+	  margin: 0px 0px 0px 20px;
+	}
+	.main-menu > li > a {
+	  font-family: Poppins-Medium;
+	  font-size: 14px;
+	  color: #333;
+	  padding: 5px 0px;
+	  transition: all 0.4s;
+	  -webkit-transition: all 0.4s;
+	  -o-transition: all 0.4s;
+	  -moz-transition: all 0.4s;
+	}
 }
 
 .header-v3 .main-menu > li > a {
@@ -639,7 +664,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .fix-menu-desktop .menu-desktop {
 	 padding: 20px 50px 20px 50px;
-  margin: 0px 30px 0px 30px;
+     margin: 0px 30px 0px 50px;
 }
 
 .header-v2 .fix-menu-desktop.container-menu-desktop {
