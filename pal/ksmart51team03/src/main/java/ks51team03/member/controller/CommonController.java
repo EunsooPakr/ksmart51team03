@@ -11,6 +11,6 @@ public class CommonController {
 	{
 		model.addAttribute("title","PAL");
 		
-		return "user/main";
+		return "member/member_main";
 	}
 }
