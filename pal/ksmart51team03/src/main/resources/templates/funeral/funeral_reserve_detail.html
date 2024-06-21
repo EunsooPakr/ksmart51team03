@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+<head>
+</head>
+<th:block layout:fragment="customContent">
+
+    <div class="main-wrapper single-hotel-right-sidebar">
+
+
+    <!-- ====================================
+    ———	PAGE TITLE
+    ===================================== -->
+    <section class="page-title">
+        <div class="page-title-img bg-img bg-overlay-darken" style="background-image: url('/assets/img/pages/page-title-bg12.jpg');">
+            <div class="container">
+                <div class="row align-items-center justify-content-center" style="height: 200px;">
+                    <div class="col-lg-6">
+                        <div class="page-title-content">
+                            <div class="">
+                                <h2 class="text-uppercase text-white font-weight-bold">Marriott Hotel</h2>
+                            </div>
+                            <p class="text-white mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ====================================
+    ———	PACKAGES SECTION
+    ===================================== -->
+    <section class="py-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-lg-4 order-2">
+                    <form class="" action="index.html" method="GET">
+                        <div class="card border">
+                            <h2 class="card-header text-uppercase text-center bg-smoke border-bottom">
+                                반려 서비스 예약
+                            </h2>
+
+                            <div class="card-body px-3 py-4">
+                                <div class="border-bottom mb-5">
+                                    <div class="form-group mb-5">
+                                        <div class="row">
+                                            <label for="inputT1ime" class="col-xl-5 col-form-label text-center text-xl-end px-2">반려 서비스 예약일:</label>
+
+                                            <div class="col-xl-7">
+                                                <div class="form-group form-group-icon form-group-icon-category-2 mb-0">
+                                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                                    <input type="text" class="form-control daterange-picker-category-2" autocomplete="off" name="dateRange" value=""
+                                                           placeholder="MM/DD/YYYY">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-5">
+                                        <div class="row">
+                                            <label for="inputTime" class="col-xl-5 col-form-label text-center text-xl-end px-2">반려 서비스 종료일:</label>
+
+                                            <div class="col-xl-7">
+                                                <div class="form-group form-group-icon form-group-icon-category-2 mb-0">
+                                                    <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                                    <input type="text" class="form-control daterange-picker-category-2" autocomplete="off" name="dateRange" value=""
+                                                           placeholder="MM/DD/YYYY">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-5">
+                                        <div class="row">
+                                            <label for="inputTime" class="col-xl-5 col-form-label text-center text-xl-right px-2">Select a time
+                                                slot:</label>
+                                            <div class="col-xl-7">
+                                                <div class="form-group mb-0">
+                                                    <div class="select-default select-category-2 timer">
+                                                        <select class="select-option">
+                                                            <option>9:00 AM</option>
+                                                            <option>10:00 AM</option>
+                                                            <option>11:00 AM</option>
+                                                            <option>12:00 AM</option>
+                                                            <option>13:00 AM</option>
+                                                            <option>14:00 AM</option>
+                                                            <option>15:00 AM</option>
+                                                            <option>16:00 AM</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group mb-5">
+                                        <div class="row">
+                                            <label for="inputText" class="col-xl-5 col-form-label text-center text-xl-end px-2">반려 서비스 선택:</label>
+                                            <div class="col-xl-7">
+                                                <div class="form-group mb-0">
+                                                    <div class="select-default select-category-2">
+                                                        <select class="select-option">
+                                                            <option>기본 장례</option>
+                                                            <option>PAL 패키지</option>
+                                                            <option>요람장 패키지</option>
+                                                            <option>프리미엄 패키지</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-5">
+                                        <div class="row align-items-center">
+                                            <label class="control-label col-xl-5 text-center text-xl-end">참여인원:</label>
+
+                                            <div class="col-xl-5">
+                                                <div class="count-input mx-auto">
+                                                    <a class="incr-btn" data-action="decrease" href="javascript:void(0)">–</a>
+                                                    <input class="quantity" type="number" value="1">
+                                                    <a class="incr-btn" data-action="increase" href="javascript:void(0)">+</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-between border-bottom mb-5 pb-5">
+                                    <span class="text-uppercase h4 mb-0">전체 비용</span>
+                                    <span class="font-weight-bold text-primary h3 mb-0">$198</span>
+                                </div>
+
+                                <div class="d-grid text-center px-4">
+                                    <button type="button" onclick="location.href='booking-step-1.html';"
+                                            class="btn btn-hover btn-lg btn-outline-secondary text-uppercase">
+                                        예약 하기 <span class="ms-4"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-7 col-lg-8">
+                    <div id="package-slider" class="owl-carousel owl-theme package-slider">
+
+                        <div class="item">
+                            <img class="lazyestload" data-src="assets/img/holets/hotel-slider-01.jpg" src="assets/img/holets/hotel-slider-01.jpg" alt="image">
+                        </div>
+
+                    </div>
+
+                    <div class="mt-8">
+                        <h2 class="text-uppercase mb-5">서비스 1 : 기본 장례</h2>
+                        <h3 class="text-uppercase mb-6">비용 : 35,000원</h3>
+                        <p class="mb-6">장례 서비스, 기본 유골함, 포포즈 어메니티</p>
+                    </div>
+
+                    <div class="mt-8">
+                        <h2 class="text-uppercase mb-5">서비스 2 : PAL 패키지</h2>
+                        <h3 class="text-uppercase mb-6">비용 : 55,000원</h3>
+                        <p class="mb-6">장례 서비스, 인견 수의보, 오동나무 관, 한지 수목함, 생화(소량), 포포즈 어메니티</p>
+                    </div>
+
+                    <div class="mt-8">
+                        <h2 class="text-uppercase mb-5">서비스 3 : 요람장 패키지</h2>
+                        <h3 class="text-uppercase mb-6">비용 : 85,000원</h3>
+                        <p class="mb-6">장례 서비스, 고급 면 수의, 목화솜 이불, 요람 관, 한지 수목함, 생화(소량), 어메니티</p>
+                    </div>
+
+                    <div class="mt-8">
+                        <h2 class="text-uppercase mb-5">서비스 3 : 요람장 패키지</h2>
+                        <h3 class="text-uppercase mb-6">비용 : 85,000원</h3>
+                        <p class="mb-6">장례 서비스, 고급 면 수의+수의보, 고급 오동나무관, 2중 기능성 유골함, 생화(소량), PAL 어메니티</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="mb-6">
+                        <h2 class="text-uppercase mb-5">Rooms types</h2>
+                        <p class="mb-5">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo
+                            efficitur, condi mentum ante a,
+                            tempor velit. Proin portt itor tortor</p>
+                    </div>
+
+
+                    <div class="mb-8 border-bottom">
+                        <h4 class="text-uppercase mb-5">Single Room</h4>
+                        <p class="">Donec phareta nec quam congue egestas. Sed aliquam mauris quam, id molestie erat tristique vel.
+                            Donec euismod malesuada rhoncus. Nulla vestibulum Ut enim ad minim veniam quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip commodo consequat, duis aute</p>
+
+                        <div class="d-md-flex justify-content-between align-items-center mb-5">
+                            <ul
+                                    class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start font-weight-medium mb-md-0">
+                                <li class="">
+                                    <a href="" class="text-gray-color hover-text-primary me-4">
+                                        <img class="me-2" src="assets/img/packages/shape-icon-1.png" alt="Image">Breakfast
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="" class="text-gray-color hover-text-primary me-4">
+                                        <img class="me-2" src="assets/img/packages/shape-icon-2.png" alt="Image">Plasma TV
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="" class="text-gray-color hover-text-primary">
+                                        <img class="me-2" src="assets/img/packages/shape-icon-3.png" alt="Image">Free wifi
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <h5 class="text-center text-lg-left">
+                                <span class="text-gray-color font-weight-bold text-capitalize">Par night:</span>
+                                <span class="text-primary font-weight-bold">$100</span>
+                            </h5>
+                        </div>
+
+                        <div class="px-lg-2 pb-3">
+                            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5">
+                                <div class="col mb-2 pe-1 px-lg-1">
+                                    <div class="media img-overlay">
+                                        <div class="media-content w-100">
+                                            <img class="media-img rounded w-100 lazyestload" data-src="assets/img/packages/single-room-img1.jpg" src="assets/img/packages/single-room-img1.jpg"
+                                                 alt="Generic placeholder image">
+                                            <a href="assets/img/holets/hotel-list-01.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col mb-2 ps-1 px-md-2 px-lg-1">
+                                    <div class="media img-overlay">
+                                        <div class="media-content w-100">
+                                            <img class="media-img rounded w-100 lazyestload" data-src="assets/img/packages/single-room-img2.jpg" src="assets/img/packages/single-room-img2.jpg"
+                                                 alt="Generic placeholder image">
+                                            <a href="assets/img/holets/hotel-list-02.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col mb-2 pe-1 pe-md-3 ps-md-1 px-lg-1">
+                                    <div class="media img-overlay">
+                                        <div class="media-content w-100">
+                                            <img class="media-img rounded w-100 lazyestload" data-src="assets/img/packages/single-room-img3.jpg" src="assets/img/packages/single-room-img3.jpg"
+                                                 alt="Generic placeholder image">
+                                            <a href="assets/img/holets/hotel-list-03.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col mb-2 ps-1 ps-md-3 pe-md-1 px-lg-1">
+                                    <div class="media img-overlay">
+                                        <div class="media-content w-100">
+                                            <img class="media-img rounded w-100 lazyestload" data-src="assets/img/packages/single-room-img4.jpg" src="assets/img/packages/single-room-img4.jpg"
+                                                 alt="Generic placeholder image">
+                                            <a href="assets/img/holets/hotel-list-04.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col mb-2 pe-1 px-md-2 px-lg-1">
+                                    <div class="media img-overlay">
+                                        <div class="media-content w-100">
+                                            <img class="media-img rounded w-100 lazyestload" data-src="assets/img/packages/single-room-img5.jpg" src="assets/img/packages/single-room-img5.jpg"
+                                                 alt="Generic placeholder image">
+                                            <a href="assets/img/holets/hotel-list-05.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-7">
+                        <h2 class="text-uppercase mb-6">Location</h2>
+                        <p class="mb-0">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo
+                            efficitur, condi mentum ante a,
+                            tempor velit. Proin portt itor tortor.</p>
+                    </div>
+
+                    <div class="mb-7" id="map" style="width:100%; height:400px;"></div>
+
+                    <div class="mb-7">
+                        <h2 class="text-uppercase mb-6">Reviews</h2>
+                        <p class="mb-6">Pulla consuat sed libero eu feugiat. Praesent vel hendrerit erat. Phasellus gravida efficitur
+                            lectus, placerat semper
+                            est tristique nec. Proin magna enim</p>
+
+                        <div class="d-flex align-items-center mb-6">
+                            <h3 class="text-uppercase mb-0">
+                                <span class="me-2">Reviews (3)</span>
+
+                                <span class="text-warning">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+              </span>
+                            </h3>
+                        </div>
+
+                        <div class="media mb-6">
+                            <a class="me-6" href="">
+                                <img class="rounded lazyestload" data-src="assets/img/blog/comments-02.jpg" src="assets/img/blog/comments-02.jpg" alt="Generic placeholder image">
+                            </a>
+
+                            <div class="media-body">
+                                <h5>Samanta Doe</h5>
+                                <span class="star add-rating-default pb-1"></span>
+                                <p class="mb-0">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo
+                                    efficitur, condi mentum ante.</p>
+                            </div>
+                        </div>
+
+                        <div class="media mb-6">
+                            <a class="me-6" href="">
+                                <img class="rounded lazyestload" data-src="assets/img/blog/comments-01.jpg" src="assets/img/blog/comments-01.jpg" alt="Generic placeholder image">
+                            </a>
+
+                            <div class="media-body">
+                                <h5>Amanda Smith</h5>
+                                <span class="star add-rating-default pb-1"></span>
+                                <p class="mb-0">Nunc ultricies dui sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna
+                                    aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="media">
+                            <a class="me-6" href="">
+                                <img class="rounded lazyestload" data-src="assets/img/blog/comments-03.jpg" src="assets/img/blog/comments-03.jpg" alt="Generic placeholder image">
+                            </a>
+                            <div class="media-body">
+                                <h5>Rodney Artichoke</h5>
+                                <span class="star add-rating-default pb-1"></span>
+                                <p class="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                    laudan totam rem ape riam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="mb-9 mb-md-0">
+                        <h3 class="text-uppercase mb-6">Leave your review</h3>
+
+                        <p class="rating-view d-flex align-items-center">
+                            <span class="content-view">Want to Rate it?</span>
+                            <span class="star add-rating-default ms-2"></span>
+                        </p>
+
+                        <div class="form-group mb-6">
+                            <textarea class="form-control border-0 bg-smoke" placeholder="Comment" rows="6"></textarea>
+                        </div>
+
+                        <div class="">
+                            <button type="button" onclick="location.href='javascript:void(0)';"
+                                    class="btn btn-hover btn-outline-secondary text-uppercase">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================
+    ———	PACKAGES LIKE SECTION
+    ===================================== -->
+    <section class="pb-10">
+        <div class="container">
+            <div class="text-uppercase mb-4">
+                <h2 class="mb-0">you may also like</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="card card-bg">
+                        <a href="" class="position-relative">
+                            <img class="card-img-top lazyestload" data-src="assets/img/holets/hotel-list-01.jpg" src="assets/img/holets/hotel-list-01.jpg" alt="Card image cap">
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-star" aria-hidden="true"></i>
+                                    </li>
+                                </ul>
+                                <h6 class="text-white font-weight-bold">4 Review</h6>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="" class="card-title text-uppercase">The London Hotel</a>
+                            </h5>
+
+                            <p class="mb-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore
+                                aliqua.</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$40</h3>
+                                </div>
+
+                                <div>
+                                    <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                    <div class="card card-bg">
+                        <a href="" class="position-relative">
+                            <img class="card-img-top lazyestload" data-src="assets/img/holets/hotel-list-02.jpg" src="assets/img/holets/hotel-list-02.jpg" alt="Card image cap">
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="far fa-star" aria-hidden="true"></i>
+                                    </li>
+                                </ul>
+                                <h6 class="text-white font-weight-bold">3 Review</h6>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="" class="card-title text-uppercase">The Europe Hotel</a>
+                            </h5>
+
+                            <p class="mb-7">Integer purus ex, dictum nec elementum eu, tristique vel lectus. Donec rutrum lectus et
+                                pharetra egestas.</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$35</h3>
+                                </div>
+
+                                <div>
+                                    <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-bg">
+                        <a href="" class="position-relative">
+                            <img class="card-img-top lazyestload" data-src="assets/img/holets/hotel-list-03.jpg" src="assets/img/holets/hotel-list-03.jpg" alt="Card image cap">
+                            <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
+                                <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star me-1" aria-hidden="true"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </li>
+                                </ul>
+                                <h6 class="text-white font-weight-bold">5 Review</h6>
+                            </div>
+                        </a>
+
+                        <div class="card-body">
+                            <h5>
+                                <a href="" class="card-title text-uppercase">The Rookery Hotel</a>
+                            </h5>
+
+                            <p class="mb-7">Sed ut perspi ciatis unde omnis iste natus error volu ptatem accusantium unde omnis iste
+                                doloremque laudan totam</p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="mb-0 text-capitalize">Start from</p>
+                                    <h3 class="text-primary">$30</h3>
+                                </div>
+
+                                <div>
+                                    <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    </div><!-- element wrapper ends -->
+
+
+</th:block>
+<!-- 사용자정의 javascript file -->
+<th:block layout:fragment="customJsFile">
+
+</th:block>
+
+<!-- 사용자정의 javascript -->
+<th:block layout:fragment="customJs">
+
+</th:block>
+
+</html>
