@@ -19,7 +19,7 @@
                         <div class="col-lg-6">
                             <div class="page-title-content">
                                 <div class="title-border">
-                                    <h2 class="text-uppercase text-white font-weight-bold">Booking step 3</h2>
+                                    <h2 class="text-uppercase text-white font-weight-bold">예약 3단계 : 예약 결제 확인</h2>
                                 </div>
                                 <p class="text-white mb-0"></p>
                             </div>
@@ -45,7 +45,7 @@
                             <a th:href="@{/funeral/funeral_reserve_info}" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span class="d-block">1. Personal info</span>
+                                    <span class="d-block">예약 1단계 : 회원 정보</span>
                                 </div>
                             </a>
                         </div>
@@ -58,7 +58,7 @@
                             <a th:href="@{/funeral/funeral_reserve_payment}" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-                                    <span class="d-block">2. Payment info</span>
+                                    <span class="d-block">예약 2단계 : 결제</span>
                                 </div>
                             </a>
                         </div>
@@ -71,7 +71,7 @@
                             <a href="javascript:void(0)" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fa fa-check" aria-hidden="true"></i>
-                                    <span class="d-block">3. Confirmation</span>
+                                    <span class="d-block">예약 3단계 : 예약 결제 확인</span>
                                 </div>
                             </a>
                         </div>
@@ -80,24 +80,19 @@
 
                 <div class="alert alert-success alert-dismissible alert-confirm fade show mb-7" role="alert">
                     <a href="javascript-void(0)" class="close" data-bs-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">Dismiss</span>
+                        <span aria-hidden="true">예약확인</span>
                     </a>
                     <i class="fa fa-check" aria-hidden="true"></i>
-                    <span><strong>Thank you!</strong> Your booking is confirmed. Invoice Sent in your email address</span>
+                    <span><strong>결제 완료!</strong> 예약하신 장례 서비스 결제가 완료되었습니다.</span>
                 </div>
 
-                <h2 class="text-capitalize mb-5">Booking details</h2>
+                <h2 class="text-capitalize mb-5">결제 정보 확인</h2>
 
                 <div class="card mb-6 mb-md-0">
                     <img class="card-img-top rounded lazyestload" th:data-src="@{/assets/img/booking/booking-complete.jpg}" th:src="@{/assets/img/booking/booking-complete.jpg}" alt="Card image cap">
                     <div class="card-body px-6">
                         <h3 class="text-capitalize mb-5">Booking details</h3>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-                            omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                            inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <p class="mb-0">패키지1,2,3.</p>
                     </div>
 
                     <div class="card-footer bg-transparent">

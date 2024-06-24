@@ -45,7 +45,7 @@
                             <a th:href="@{/funeral/funeral_reserve_info}" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span class="d-block">1. Personal info</span>
+                                    <span class="d-block">예약 1단계 : 회원 정보</span>
                                 </div>
                             </a>
                         </div>
@@ -58,7 +58,7 @@
                             <a th:href="@{/funeral/funeral_reserve_payment}" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fas fa-dollar-sign" aria-hidden="true"></i>
-                                    <span class="d-block">2. Payment info</span>
+                                    <span class="d-block">예약 2단계 : 결제</span>
                                 </div>
                             </a>
                         </div>
@@ -71,7 +71,7 @@
                             <a th:href="@{/funeral/funeral_reserve_confirm}" class="progress-wizard-dot">
                                 <div class="progress-wizard-content">
                                     <i class="fa fa-check" aria-hidden="true"></i>
-                                    <span class="d-block">3. Confirmation</span>
+                                    <span class="d-block">예약 3단계 : 예약 결제 확인</span>
                                 </div>
                             </a>
                         </div>
@@ -80,83 +80,60 @@
 
                 <div class="row">
                     <div class="col-md-7 col-lg-8 order-1 order-md-0">
-                        <h3 class="text-capitalize mb-5">Billing address</h3>
+                        <h3 class="text-capitalize mb-5">장례 서비스 결제</h3>
 
                         <form action="" method="post" target="_blank">
                             <div class="mb-5">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="inputName">First Name</label>
+                                            <label for="inputName">회원 아이디</label>
                                             <input type="text" class="form-control border-0 bg-smoke">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="inputName">Last Name</label>
+                                            <label for="inputName">장례 서비스</label>
                                             <input type="text" class="form-control border-0 bg-smoke">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="inputName">Adderss 1</label>
-                                            <input type="text" class="form-control border-0 bg-smoke">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="inputName">Adderss 2</label>
-                                            <input type="text" class="form-control border-0 bg-smoke">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="inputName">City</label>
-                                            <input type="text" class="form-control border-0 bg-smoke">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="inputName">Zip Code</label>
-                                            <input type="number" class="form-control border-0 bg-smoke">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="inputName">State/Region</label>
-                                            <input type="text" class="form-control border-0 bg-smoke">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="inputName">Country</label>
+                                            <label for="inputName">모바일 결제</label>
                                             <div class="select-default select-confirm">
                                                 <select class="select-option">
-                                                    <option>Select Country</option>
-                                                    <option>USA</option>
-                                                    <option>UK</option>
-                                                    <option>CANADA</option>
+                                                    <option>모바일 결제 수단 선택</option>
+                                                    <option>카카오페이</option>
+                                                    <option>카카오뱅크</option>
+                                                    <option>페이북</option>
+                                                    <option>토스</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
                             <div class="mb-8">
-                                <h3 class="text-capitalize mb-5">Card Info</h3>
+                                <h3 class="text-capitalize mb-5">카드 결제</h3>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label for="inputName">Card Name</label>
-                                            <input type="text" class="form-control border-0 bg-smoke">
+                                            <label for="inputName">결제 카드 선택</label>
+                                            <div class="select-default select-confirm">
+                                                <select class="select-option">
+                                                    <option>카드 결제</option>
+                                                    <option>우리은행</option>
+                                                    <option>신한은행</option>
+                                                    <option>전북은행</option>
+                                                    <option>농협</option>
+                                                    <option>국민은행</option>
+                                                    <option>기업은행</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -229,11 +206,11 @@
 
                             <div class="d-flex justify-content-between">
                                 <button type="button" onclick="location.href='/funeral/funeral_reserve_info';" class="btn btn-primary text-uppercase">
-                                    Back
+                                    뒤로 가기
                                 </button>
 
                                 <button type="button" onclick="location.href='/funeral/funeral_reserve_confirm';" class="btn btn-primary text-uppercase">
-                                    Confirm
+                                    다음 단계
                                 </button>
                             </div>
                         </form>
