@@ -78,7 +78,7 @@
         var posWrapHeader = 0;
     }
     
-
+	/* 없애면 흔들림 없어짐
     if($(window).scrollTop() > posWrapHeader) {
         $(headerDesktop).addClass('fix-menu-desktop');
         $(wrapMenu).css('top',40); 
@@ -97,7 +97,7 @@
             $(headerDesktop).removeClass('fix-menu-desktop');
             $(wrapMenu).css('top',posWrapHeader - $(this).scrollTop()); 
         } 
-    });
+    }); */
   
   
   
